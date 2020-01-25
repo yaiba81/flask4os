@@ -10,8 +10,7 @@ os.system("cd  /opt/app-root/src/instantclient_19_5 && \
     ln -s libaio.so.1.0.1 libaio.so.1")
 os.system("source /opt/app-root/etc/generate_container_user")
 os.system("cd /opt/app-root/src/instantclient_19_5 && \
-    export LD_LIBRARY_PATH=/opt/app-root/src/instantclient_19_5:$LD_LIBRARY_PATH && \
-    exit")
+    export LD_LIBRARY_PATH=/opt/app-root/src/instantclient_19_5:$LD_LIBRARY_PATH")
 
 workers = int(os.environ.get('GUNICORN_PROCESSES', '3'))
 threads = int(os.environ.get('GUNICORN_THREADS', '1'))
