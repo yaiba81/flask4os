@@ -1,13 +1,15 @@
 from flask import Flask
 import cx_Oracle as cx
+import sys
 application = Flask(__name__)
 
 @application.route("/")
 def hello():
     try:
-        res = cx.connect("oe/oracle@myserver1.test.com:1521/orc1")
+        if cx.connect("oe/oracle@myserver1.test.com:1521/orc1"):
+            res = "Hello World"
     except:
-        res = "Hello Failed"
+        res = sys.exc_info()[0]
     return res
 
 if __name__ == "__main__":
