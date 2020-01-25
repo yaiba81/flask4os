@@ -10,7 +10,7 @@ curl -s -o icbl.zip https://download.oracle.com/otn_software/linux/instantclient
     unzip icbl.zip && \
     cp -r instantclient_19_5 /opt/app-root/bin/instantclient_19_5 &&\
     rm icbl.zip && \
-    rm instantclient_19_5
+    rm -r instantclient_19_5
     
 exec app.py
     
