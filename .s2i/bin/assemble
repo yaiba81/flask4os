@@ -7,11 +7,9 @@ set -eo pipefail
 pip install -r /tmp/src/requirements.txt
 
 curl -s -o /tmp/icbl.zip https://download.oracle.com/otn_software/linux/instantclient/195000/instantclient-basiclite-linux.x64-19.5.0.0.0dbru.zip && \
-    unzip /tmp/icbl.zip && cp -r /tmp/instantclient_19_5 /opt/app-root/bin/instantclient_19_5 &&\
+    unzip /tmp/icbl.zip && \
+    cp -r /tmp/instantclient_19_5 /opt/app-root/bin/instantclient_19_5 &&\
     rm /tmp/icbl.zip
     
 cp -r /tmp/src/src/* .
     
-# Fix up permissions.
-
-fix-permissions /opt/app-root
