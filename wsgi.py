@@ -9,8 +9,8 @@ def hello():
         print('will connect')
         cx.connect("oe/oracle@myserver1.test.com:1521/orc1")
         res = "Hello World"
-    except:        
-        res = 'error occured'
+    except Exception as e:        
+        res = 'error occured: ', e
         print(res)
     return res
 
