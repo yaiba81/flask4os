@@ -1,6 +1,10 @@
 from flask import Flask
 import cx_Oracle as cx
-import sys
+import os
+
+os.system("source /opt/app-root/etc/generate_container_user && \
+    export LD_LIBRARY_PATH=/opt/app-root/src/instantclient_19_5:$LD_LIBRARY_PATH")
+
 application = Flask(__name__)
 
 @application.route("/")
