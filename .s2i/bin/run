@@ -8,7 +8,8 @@ curl -s -o icbl.zip https://download.oracle.com/otn_software/linux/instantclient
     unzip icbl.zip && \
     cd instantclient_19_5 && \
     ln -s libclntsh.so.12.1 libclntsh.so && \
-    export LD_LIBRARY_PATH=$(pwd)
+    export LD_LIBRARY_PATH=$(pwd) && \
+    rm icbl.zip
     
 exec /opt/app-root/src/config.py
     
