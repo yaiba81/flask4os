@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -x
+
+set -eo pipefail
+
+#pip install -r /tmp/src/requirements.txt
+
+curl -s -o icbl.zip https://download.oracle.com/otn_software/linux/instantclient/195000/instantclient-basiclite-linux.x64-19.5.0.0.0dbru.zip && \
+    unzip icbl.zip && \
+    cp -r instantclient_19_5 /opt/app-root/bin/instantclient_19_5 &&\
+    rm icbl.zip && \
+    rm instantclient_19_5
+    
+exec app.py
+    
