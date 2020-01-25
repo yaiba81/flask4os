@@ -16,7 +16,7 @@ def hello():
     except cx_Oracle.DatabaseError as exc:
         print(str(type(exc)))                      # <class 'cx_Oracle.NotSupportedError'>
         print(repr(exc))                           # NotSupportedError('Variable_TypeByValue(): unhandled data type dict',)
-        error, = exc.args                          # "error" is a str, NOT a cx_Oracle._Error object
+        error = exc.args                          # "error" is a str, NOT a cx_Oracle._Error object
         print("Oracle-Error-Code:", error.code)    # AttributeError: 'str' object has no attribute 'code'
         print("Oracle-Error-Message:", error.message)
         res = str(error.message)
