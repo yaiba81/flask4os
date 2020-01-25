@@ -2,15 +2,15 @@ from flask import Flask
 import cx_Oracle as cx
 import os
 
-os.system("source /opt/app-root/etc/generate_container_user && \
-    export LD_LIBRARY_PATH=/opt/app-root/src/instantclient_19_5:$LD_LIBRARY_PATH")
-
 application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    try:
-        print('will connect')
+    print('running things')
+    os.system("source /opt/app-root/etc/generate_container_user && \
+    export LD_LIBRARY_PATH=/opt/app-root/src/instantclient_19_5:$LD_LIBRARY_PATH")
+    print('about to connect')
+    try:        
         cx.connect("oe/oracle@myserver1.test.com:1521/orc1")
         res = "Hello World"
     except cx_Oracle.DatabaseError as exc:
