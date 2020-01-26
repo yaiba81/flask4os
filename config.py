@@ -1,8 +1,8 @@
 import os
 
-os.system("./envi.sh")
+'''os.system("./envi.sh")
 
-'''os.system("curl -s -o icbl.zip https://download.oracle.com/otn_software/linux/instantclient/195000/instantclient-basiclite-linux.x64-19.5.0.0.0dbru.zip && \
+os.system("curl -s -o icbl.zip https://download.oracle.com/otn_software/linux/instantclient/195000/instantclient-basiclite-linux.x64-19.5.0.0.0dbru.zip && \
     unzip icbl.zip")
 os.system("wget http://mirror.centos.org/centos/7/os/x86_64/Packages/libaio-0.3.109-13.el7.x86_64.rpm && \
     rpm2cpio libaio-0.3.109-13.el7.x86_64.rpm | cpio -idmv")
