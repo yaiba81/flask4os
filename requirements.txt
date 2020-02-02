@@ -5,5 +5,5 @@ Flask
 #scikit-learn
 #scipy
 #teradatasql==16.20.0.58
-cx-Oracle==7.3.0
+#cx-Oracle==7.3.0
 #teradata==15.10.0.21
